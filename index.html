@@ -2,12 +2,12 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <base href="./" />
+  <base href="/onbai-modern-draft-v2/" />
   <script>
     // Decode the GitHub Pages 404.html SPA redirect (see 404.html) back into a
     // real pathname *before* any routing code reads window.location.
     (function () {
-      // 404.html gửi về dạng /onbai/?p=/lop8/tx1ly&q=<query gốc>[&bf=1]
+      // 404.html gửi về dạng /onbai-modern-draft-v2/?p=/lop8/tx1ly&q=<query gốc>[&bf=1]
       var l = window.location;
       if (l.search.indexOf('?p=/') === 0) {
         var rest = l.search.slice(3);
@@ -28,67 +28,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-
-<style id="onbai-modern-redesign">
-:root{--ob-ink:#182230;--ob-muted:#687586;--ob-line:#e6eaf0;--ob-paper:#fff;--ob-bg:#f4f6fa;--ob-blue:#3569e8;--ob-violet:#7258d8;--ob-shadow:0 24px 70px rgba(25,39,65,.09)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--ob-bg)}
-body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;background:radial-gradient(ellipse at 12% 0%,#e8efff 0,transparent 36%),radial-gradient(ellipse at 90% 12%,#f1eaff 0,transparent 30%),#f5f7fb!important;color:var(--ob-ink)!important;padding:94px 22px 40px!important;letter-spacing:-.012em}
-button,input,select,textarea{font:inherit}
-button{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease}
-button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(53,105,232,.28);outline-offset:2px}
-#homeScreen,#subjectScreen{min-height:calc(100vh - 130px)!important}
-#homeScreen>div,#subjectScreen>div{width:100%;max-width:980px!important}
-#homeScreen .bg-white,#subjectScreen .bg-white{background:rgba(255,255,255,.94)!important;border:1px solid rgba(224,230,240,.9);border-radius:30px!important;box-shadow:var(--ob-shadow)!important;overflow:hidden}
-#homeScreen .bg-gradient-to-r,#subjectScreen .bg-gradient-to-r{background:linear-gradient(115deg,#1f3970 0%,#315fbd 53%,#6b63c9 100%)!important;padding:48px 32px!important}
-#homeScreen h1{font-size:clamp(2.1rem,5vw,3.25rem)!important;letter-spacing:-.055em;line-height:1.08}
-#homeScreen .bg-gradient-to-r p,#subjectScreen .bg-gradient-to-r p{color:#e4ebff!important;font-size:1.05rem!important}
-#homeScreen .p-8,#subjectScreen .p-8{padding:clamp(20px,4vw,42px)!important}
-#homeScreen button[id^="homeBtn"]{min-height:205px;border-radius:22px!important;border:1px solid rgba(255,255,255,.22);box-shadow:0 12px 28px rgba(35,58,105,.13)!important}
-#homeScreen button[id^="homeBtn"]:hover{transform:translateY(-5px)!important;box-shadow:0 20px 38px rgba(35,58,105,.2)!important}
-#homeScreen button[id^="homeBtn"] h3{letter-spacing:-.04em}
-#subjectScreen button{border-radius:15px}
-#subjectScreen .grid{gap:14px!important}
-#subjectScreen button:hover{transform:translateY(-2px)}
-#quizScreen{padding-top:26px!important}
-#quizScreen>.max-w-7xl{gap:20px!important}
-#quizScreen .bg-white{background:var(--ob-paper)!important;border:1px solid var(--ob-line);border-radius:22px!important;box-shadow:0 14px 45px rgba(25,39,65,.07)!important}
-#quizScreen .shadow-xl,#quizScreen .shadow-2xl{box-shadow:0 14px 45px rgba(25,39,65,.07)!important}
-#quizScreen .p-8{padding:clamp(18px,3vw,32px)!important}
-#quizScreen h1,#quizScreen h2,#quizScreen h3{letter-spacing:-.035em}
-#quizScreen button{border-radius:12px}
-#quizScreen input[type="radio"],#quizScreen input[type="checkbox"]{accent-color:var(--ob-blue)}
-#quizScreen .border{border-color:var(--ob-line)}
-#quizScreen .rounded-xl,#quizScreen .rounded-2xl{border-radius:16px!important}
-#quizScreen .question-nav button,#quizScreen [id*="questionNav"] button{border-radius:10px!important}
-#settingsToggleBtn{border-radius:999px!important}
-body>div[style*="position:fixed"]{top:12px!important;left:16px!important;gap:7px!important}
-body>div[style*="position:fixed"]>div,body>div[style*="position:fixed"]>button{background:rgba(24,34,48,.88)!important;backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.15)!important;box-shadow:0 8px 25px rgba(20,30,50,.14)!important}
-#settingsPanel{background:#f8faff!important}
-a{color:var(--ob-blue)}
-/* dark theme */
-body.dark{background:radial-gradient(ellipse at 12% 0%,#1c2a47 0,transparent 38%),#101725!important;color:#e8edf7!important}
-body.dark #homeScreen .bg-white,body.dark #subjectScreen .bg-white,body.dark #quizScreen .bg-white{background:#192438!important;border-color:#2b3850!important;box-shadow:0 20px 65px rgba(0,0,0,.22)!important}
-body.dark #homeScreen .bg-gradient-to-r,body.dark #subjectScreen .bg-gradient-to-r{background:linear-gradient(115deg,#172b50,#244b91 55%,#51449b)!important}
-body.dark #settingsPanel{background:#202d43!important;border-color:#34435d!important}
-body.dark #quizScreen .border{border-color:#34435d!important}
-body.dark #quizScreen .text-gray-600,body.dark #quizScreen .text-gray-700,body.dark #quizScreen .text-gray-800{color:#d1d9e8!important}
-body.dark #quizScreen .bg-gray-50{background:#202d43!important}
-body.dark #subjectScreen .text-gray-700,body.dark #homeScreen .text-gray-700{color:#d1d9e8!important}
-@media(max-width:700px){
- body{padding:88px 12px 24px!important}
- #homeScreen,#subjectScreen{min-height:calc(100vh - 110px)!important}
- #homeScreen .bg-gradient-to-r,#subjectScreen .bg-gradient-to-r{padding:40px 18px!important}
- #homeScreen .grid{grid-template-columns:1fr!important}
- #homeScreen button[id^="homeBtn"]{min-height:145px;padding:22px!important}
- #homeScreen button[id^="homeBtn"] svg{width:44px;height:44px}
- #quizScreen>.max-w-7xl{display:block!important;padding-left:0!important;padding-right:0!important}
- #quizScreen .p-8{padding:18px!important}
- body>div[style*="position:fixed"]{left:10px!important;top:9px!important}
-}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-</style>
-
 </head>
 <body class="antialiased bg-gradient-to-br from-blue-50 to-green-50 min-h-screen p-6 pt-24" style="opacity:0;transition:opacity 0.15s ease">
 <div style="position:fixed;top:10px;left:10px;z-index:9999;display:flex;flex-direction:column;align-items:flex-start;gap:8px;">
@@ -102,7 +41,7 @@ body.dark #subjectScreen .text-gray-700,body.dark #homeScreen .text-gray-700{col
   </div>
   <button id="darkModeToggle" onclick="toggleDarkMode()" style="background:rgba(0,0,0,0.8);color:white;padding:8px 16px;border-radius:20px;border:none;cursor:pointer;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
     <span id="darkModeIcon">🌙</span>
-    <span id="darkModeLabel">Dark Mode</span>
+    <span id="darkModeLabel">Giao diện</span>
   </button>
 </div>
 
@@ -427,7 +366,7 @@ body.dark .apply-btn:hover { background-color: #475569 !important; }
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
         <div class="bg-gradient-to-r from-blue-600 via-green-600 to-teal-600 p-8 text-white text-center relative">
           <!-- Settings button top-right — nổi bật với border + shadow -->
-          <button id="settingsToggleBtn" onclick="toggleSettingsPanel()" class="absolute top-4 right-4 flex items-center gap-1.5 transition-all px-3 py-1.5 rounded-full text-sm font-bold backdrop-blur-sm" style="background:rgba(255,255,255,0.25);border:1.5px solid rgba(255,255,255,0.6);box-shadow:0 2px 10px rgba(0,0,0,0.15);letter-spacing:0.01em;">
+          <button id="settingsToggleBtn" aria-controls="settingsPanel" aria-expanded="false" onclick="toggleSettingsPanel()" class="absolute top-4 right-4 flex items-center gap-1.5 transition-all px-3 py-1.5 rounded-full text-sm font-bold backdrop-blur-sm" style="background:rgba(255,255,255,0.25);border:1.5px solid rgba(255,255,255,0.6);box-shadow:0 2px 10px rgba(0,0,0,0.15);letter-spacing:0.01em;">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
             Cài đặt
           </button>
@@ -443,38 +382,55 @@ body.dark .apply-btn:hover { background-color: #475569 !important; }
           <p class="text-xl text-blue-100">Chọn lớp hoặc chế độ để bắt đầu</p>
         </div>
 
-        <!-- Settings Panel (inline, below header) -->
-        <div id="settingsPanel" style="display:none;" class="border-b border-gray-200 px-8 py-5 bg-gray-50">
-          <div class="max-w-lg mx-auto flex flex-col gap-4">
-
-            <!-- Canh bao -->
+        <!-- OnBai Settings -->
+        <div id="settingsPanel" style="display:none;" aria-hidden="true" role="region" aria-label="Cài đặt OnBai" class="ob-settings-panel border-b border-gray-200 px-6 py-6">
+          <div class="ob-settings-heading">
             <div>
-              <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Cảnh báo</div>
-              <div class="pl-1">
-                <label class="flex items-center gap-3 cursor-pointer group">
-                  <input type="checkbox" id="warningToggle" class="w-4 h-4 accent-blue-500 cursor-pointer flex-shrink-0">
-                  <span class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                    Cảnh báo khi nộp bài / thoát trang / reload
-                  </span>
-                </label>
-              </div>
+              <p class="ob-eyebrow">ONBAI PREFERENCES</p>
+              <h2>Cài đặt</h2>
+              <p>Tùy chỉnh trải nghiệm học tập trên thiết bị này.</p>
             </div>
+            <button id="settingsCloseBtn" type="button" class="ob-settings-close" aria-label="Đóng cài đặt">Đóng <span aria-hidden="true">×</span></button>
+          </div>
 
-            <!-- Mobile nav -->
-            <div>
-              <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Điều hướng câu hỏi trên mobile</div>
-              <div class="flex flex-col gap-2 pl-1">
-                <label class="flex items-start gap-3 cursor-pointer group">
-                  <input type="radio" name="mobileNavStyle" id="mobileNavInlineOpt" value="inline" class="mt-0.5 w-4 h-4 accent-blue-500 cursor-pointer flex-shrink-0" checked>
-                  <span class="text-sm text-gray-700 group-hover:text-gray-900">Danh sách câu hỏi hiện <strong>bên dưới trang</strong></span>
-                </label>
-                <label class="flex items-start gap-3 cursor-pointer group">
-                  <input type="radio" name="mobileNavStyle" id="mobileNavDrawerOpt" value="drawer" class="mt-0.5 w-4 h-4 accent-blue-500 cursor-pointer flex-shrink-0">
-                  <span class="text-sm text-gray-700 group-hover:text-gray-900">Hiển thị nút <strong>⸬</strong> → danh sách câu hỏi hiện ở <strong>bên phải</strong></span>
-                </label>
+          <div class="ob-settings-grid">
+            <section class="ob-setting-card" aria-labelledby="obAppearanceTitle">
+              <div class="ob-setting-title"><span class="ob-setting-icon" aria-hidden="true">◐</span><div><h3 id="obAppearanceTitle">Giao diện</h3><p>Màu sắc và khả năng đọc</p></div></div>
+              <label class="ob-field"><span>Chế độ hiển thị</span><select id="themeSelect"><option value="system">Theo thiết bị</option><option value="light">Sáng</option><option value="dark">Tối</option></select></label>
+              <label class="ob-field"><span>Tông nhấn</span><select id="accentSelect"><option value="graphite">Graphite · Xám chì</option><option value="bluegray">Blue-gray · Xanh xám</option><option value="olive">Olive · Ô liu trầm</option></select></label>
+              <label class="ob-field"><span>Cỡ chữ</span><select id="textSizeSelect"><option value="compact">Nhỏ</option><option value="normal">Mặc định</option><option value="large">Lớn</option></select></label>
+            </section>
+
+            <section class="ob-setting-card" aria-labelledby="obMotionTitle">
+              <div class="ob-setting-title"><span class="ob-setting-icon" aria-hidden="true">✳</span><div><h3 id="obMotionTitle">Chuyển động</h3><p>Animation và phản hồi tương tác</p></div></div>
+              <label class="ob-switch-row"><span><strong>Hiệu ứng chuyển động</strong><small>Hover, press, chuyển màn hình và xuất hiện khi cuộn</small></span><input id="animationsToggle" type="checkbox" checked></label>
+              <label class="ob-field"><span>Mức độ chuyển động</span><select id="motionIntensity"><option value="subtle">Subtle · Nhẹ</option><option value="balanced">Balanced · Cân bằng</option><option value="expressive">Expressive · Rõ hơn</option></select></label>
+              <label class="ob-switch-row"><span><strong>Reduce Motion</strong><small>Giảm chuyển động theo tùy chọn trợ năng</small></span><input id="reduceMotionToggle" type="checkbox"></label>
+            </section>
+
+            <section class="ob-setting-card" aria-labelledby="obStudyTitle">
+              <div class="ob-setting-title"><span class="ob-setting-icon" aria-hidden="true">▤</span><div><h3 id="obStudyTitle">Trải nghiệm học</h3><p>Thiết lập màn hình bắt đầu và bài kiểm tra</p></div></div>
+              <label class="ob-field"><span>Màn hình mặc định khi mở OnBai</span><select id="defaultStartScreen"><option value="home">Trang chủ</option><option value="lop7">Lớp 7</option><option value="lop8">Lớp 8</option></select></label>
+              <label class="ob-switch-row"><span><strong>Cảnh báo khi rời bài</strong><small>Nhắc trước khi tải lại hoặc rời trang lúc đang làm</small></span><input id="warningToggle" type="checkbox"></label>
+              <div class="ob-field"><span>Điều hướng câu hỏi trên điện thoại</span>
+                <div class="ob-radio-stack">
+                  <label><input type="radio" name="mobileNavStyle" id="mobileNavInlineOpt" value="inline" checked> Danh sách ở bên dưới</label>
+                  <label><input type="radio" name="mobileNavStyle" id="mobileNavDrawerOpt" value="drawer"> Mở danh sách bằng nút bên phải</label>
+                </div>
               </div>
-            </div>
+            </section>
 
+            <section class="ob-setting-card" aria-labelledby="obAccessTitle">
+              <div class="ob-setting-title"><span class="ob-setting-icon" aria-hidden="true">◎</span><div><h3 id="obAccessTitle">Trợ năng & cập nhật</h3><p>Ưu tiên sự rõ ràng và kiểm soát</p></div></div>
+              <label class="ob-switch-row"><span><strong>Tương phản cao</strong><small>Tăng độ rõ của viền và nội dung</small></span><input id="highContrastToggle" type="checkbox"></label>
+              <label class="ob-switch-row"><span><strong>Thông báo phiên bản mới</strong><small>Hiện nhắc khi OnBai có bản cập nhật</small></span><input id="updateNotificationsToggle" type="checkbox" checked></label>
+              <p class="ob-setting-note">Âm thanh chưa được tích hợp trong phiên bản hiện tại nên không hiển thị tùy chọn giả.</p>
+            </section>
+          </div>
+
+          <div class="ob-settings-footer">
+            <p id="settingsStatus" role="status">Các lựa chọn được lưu tự động trên thiết bị này.</p>
+            <button id="resetSettingsBtn" type="button" class="ob-reset-button">Khôi phục cài đặt mặc định</button>
           </div>
         </div>
 
@@ -1068,13 +1024,14 @@ body.dark .apply-btn:hover { background-color: #475569 !important; }
             </div>
             <h3 class="text-2xl font-bold mb-2">${s.label}</h3>
             <p class="text-white/70 text-sm">${s.subtitle}</p>
-            <div class="mt-4 text-xs bg-white/20 rounded-full px-3 py-1 w-fit mx-auto${isFolder ? '' : ' subject-q-count'}" data-id="${s.id}">
+            <div class="mt-4 text-xs bg-white/20 rounded-full px-3 py-1 w-fit mx-auto${isFolder ? '' : ' subject-q-count'}" ${isFolder ? '' : 'data-loading="true"'} data-id="${s.id}">
               ${badge}
             </div>
           </div>
         </button>
       `;
       }).join('');
+      if (window.obObserveReveals) window.obObserveReveals(grid);
 
       grid.querySelectorAll('.folder-card').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -1118,7 +1075,7 @@ body.dark .apply-btn:hover { background-color: #475569 !important; }
       if (tf) parts.push(tf + ' Đ/S');
       if (text) parts.push(text + ' điền');
       const label = parts.join(' + ') || '0 TN';
-      document.querySelectorAll('.subject-q-count[data-id="' + id + '"]').forEach(el => el.textContent = label);
+      document.querySelectorAll('.subject-q-count[data-id="' + id + '"]').forEach(el => { el.textContent = label; el.removeAttribute('data-loading'); });
     }
 
     function selectSubject(subjectKey) {
@@ -1137,6 +1094,7 @@ body.dark .apply-btn:hover { background-color: #475569 !important; }
       lastValidQuestionCount = defaultValue;
       subjectScreen.classList.add('hidden');
       modeScreen.classList.remove('hidden');
+      if (window.obAnimateRoute) window.obAnimateRoute();
     }
     let currentSubject = null;
     let quizMode = null;
@@ -1753,6 +1711,7 @@ body.dark .apply-btn:hover { background-color: #475569 !important; }
         modeScreen.classList.add('hidden');
         quizScreen.classList.add('hidden');
         resultScreen.classList.add('hidden');
+        if (window.obAnimateRoute) window.obAnimateRoute();
         return;
       }
       if (!quizStarted) {
@@ -1760,6 +1719,7 @@ body.dark .apply-btn:hover { background-color: #475569 !important; }
         modeScreen.classList.remove('hidden');
         quizScreen.classList.add('hidden');
         resultScreen.classList.add('hidden');
+        if (window.obAnimateRoute) window.obAnimateRoute();
         return;
       }
       subjectScreen.classList.add('hidden');
@@ -2296,6 +2256,7 @@ body.dark .apply-btn:hover { background-color: #475569 !important; }
         preloadNextRandomImage();
         renderRandomQuestion();
 		}
+      if (window.obAnimateRoute) window.obAnimateRoute();
 	}
 
     // ===== QUESTION NAVIGATOR =====
@@ -2860,11 +2821,10 @@ btnRestart.addEventListener('click', () => {
       e.returnValue = '';
     });
 
-    // warning toggle: luôn tắt khi load trang
+    // warning toggle: restore the user's saved preference
     (function initWarningToggle(){
       const wt = document.getElementById('warningToggle');
-      wt.checked = false;
-      localStorage.setItem('warningsEnabled', 'false');
+      wt.checked = localStorage.getItem('warningsEnabled') === 'true';
       wt.addEventListener('change', () => {
         localStorage.setItem('warningsEnabled', wt.checked ? 'true' : 'false');
       });
@@ -3148,6 +3108,7 @@ console.log('   - resetOnlineCount() : Reset toàn bộ (cẩn thận!)');
     }
 
     setInterval(() => {
+      if (localStorage.getItem('ob.updateNotifications') === '0') return;
       fetchVersion().then(newVersion => {
         if (!newVersion || !currentVersion) return;
 
@@ -3195,30 +3156,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
 function toggleDarkMode() {
-  const isDark = document.body.classList.toggle('dark');
-  document.getElementById('darkModeIcon').textContent = isDark ? '☀️' : '🌙';
-  document.getElementById('darkModeLabel').textContent = isDark ? 'Light Mode' : 'Dark Mode';
-  // Also update the toggle bar background
-  const toggleBar = document.querySelector('.relative.z-50.p-3');
-  if (toggleBar) {
-    toggleBar.style.backgroundColor = isDark ? '#1e2535' : '';
-    toggleBar.style.borderColor = isDark ? '#334155' : '';
-  }
-  localStorage.setItem('darkMode', isDark ? '1' : '0');
+  if (window.obToggleTheme) window.obToggleTheme();
 }
 
-function applySettingsPanelDark(isDark) {
-  const panel = document.getElementById('settingsPanel');
-  if (!panel) return;
-  // bg-gray-50 / bg-white handled by Tailwind dark overrides automatically
+function applySettingsPanelDark() {
+  // Theme styles are applied centrally by the settings controller.
 }
 
 function toggleSettingsPanel() {
-  const panel = document.getElementById('settingsPanel');
-  panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+  if (window.obToggleSettings) window.obToggleSettings();
 }
-
-// No click-outside needed — panel is inline inside card
 
 function collapseNavDesktop() {
   const nav = document.getElementById('questionNavDesktop');
@@ -3238,27 +3185,31 @@ function expandNavDesktop() {
 
 // Apply saved nav state on load
 document.addEventListener('DOMContentLoaded', () => {
-  const route = getRoute();
+  // The settings controller is defined near the end of this document.
+  if (window.initOnBaiSettings) window.initOnBaiSettings();
+  let route = getRoute();
+  const preferredStart = localStorage.getItem('ob.defaultStartScreen') || 'home';
+  if (route === 'home' && (preferredStart === 'lop7' || preferredStart === 'lop8')) {
+    history.replaceState(null, '', routeToPath(preferredStart));
+    route = preferredStart;
+  }
   renderRoute();
   if (route !== 'lop7' && route !== 'lop8') {
-    // lop7/lop8's loadSubjectsAndInit() reveals the page itself once data is ready;
-    // every other route has nothing to fetch, so reveal right away.
+    // lop7/lop8 reveals after the subject index is ready.
     document.body.style.opacity = '1';
   }
-  if (localStorage.getItem('darkMode') === '1') {
-    toggleDarkMode();
-  }
-  // Nav collapsed state is applied when nav becomes visible (in showQuiz logic)
+  if (window.obObserveReveals) window.obObserveReveals(document.getElementById('homeScreen'));
 });
 
 </script>
 
 <!-- ===== ROUTER: /, /lop7[/<môn>], /lop8[/<môn>], /minigame, /minigame/hangdangthuc ===== -->
 <script>
-  const BASE_PATH = '/onbai';
+  const BASE_PATH = '/onbai-modern-draft-v2';
 
   function currentPath() {
-    return window.location.pathname.replace(/^\/onbai/, '').replace(/\/+$/, '');
+    const path = window.location.pathname;
+    return (path.startsWith(BASE_PATH) ? path.slice(BASE_PATH.length) : path).replace(/\/+$/, '');
   }
 
   function getRoute() {
@@ -3363,6 +3314,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('lop7Root').classList.toggle('hidden', !isClassRoute);
     document.getElementById('mgPickerScreen').classList.toggle('hidden', route !== 'minigame');
     document.getElementById('mgHDTRoot').classList.toggle('hidden', route !== 'minigame-hangdangthuc');
+    if (window.obAnimateRoute) window.obAnimateRoute();
     window.scrollTo(0, 0);
 
     const wasInClass = lastRouteWasClass;
@@ -3812,6 +3764,7 @@ const MathEngine = (function () {
       modeScreen.classList.remove('hidden');
       gameScreen.classList.add('hidden');
       resultScreen.classList.add('hidden');
+      if (window.obAnimateRoute) window.obAnimateRoute();
       return;
     }
     if (mgMode === 'test' && mgCompleted) {
@@ -3819,12 +3772,14 @@ const MathEngine = (function () {
       gameScreen.classList.add('hidden');
       resultScreen.classList.remove('hidden');
       renderMgResult();
+      if (window.obAnimateRoute) window.obAnimateRoute();
       return;
     }
     modeScreen.classList.add('hidden');
     gameScreen.classList.remove('hidden');
     resultScreen.classList.add('hidden');
     renderMgQuestion();
+    if (window.obAnimateRoute) window.obAnimateRoute();
   }
 
   function doMgSubmit() {
@@ -3940,6 +3895,297 @@ body.dark footer {
   color: #94a3b8;
 }
 </style>
+
+
+
+<style id="onbai-apple-design">
+:root{
+  --ob-bg:#f2f2f0;--ob-surface:#ffffff;--ob-surface-2:#f7f7f5;--ob-text:#1d1d1f;--ob-muted:#6e6e73;--ob-line:#d7d7d2;
+  --ob-accent:#68717d;--ob-accent-strong:#414a55;--ob-accent-soft:#eceef0;--ob-accent-rgb:104,113,125;
+  --ob-shadow:0 22px 60px rgba(24,28,34,.075);--ob-shadow-hover:0 28px 72px rgba(24,28,34,.13);
+  --ob-time:220ms;--ob-page-time:360ms;--ob-ease:cubic-bezier(.22,.68,0,1.08);--ob-font-scale:16px;
+  color-scheme:light;
+}
+html{scroll-behavior:smooth;font-size:var(--ob-font-scale);background:var(--ob-bg)}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif!important;background:var(--ob-bg)!important;color:var(--ob-text)!important;padding:82px clamp(14px,3vw,30px) 38px!important;letter-spacing:-.012em;transition:background-color 320ms ease,color 320ms ease}
+body.dark{--ob-bg:#171819;--ob-surface:#232527;--ob-surface-2:#2a2c2f;--ob-text:#f5f5f7;--ob-muted:#a1a1a6;--ob-line:#414346;--ob-shadow:0 22px 60px rgba(0,0,0,.22);--ob-shadow-hover:0 28px 72px rgba(0,0,0,.34);color-scheme:dark;background:var(--ob-bg)!important;color:var(--ob-text)!important}
+body[data-accent="bluegray"]{--ob-accent:#6e8798;--ob-accent-strong:#496273;--ob-accent-soft:#eaf0f3;--ob-accent-rgb:110,135,152}
+body.dark[data-accent="bluegray"]{--ob-accent:#9bb4c4;--ob-accent-strong:#6e8798;--ob-accent-soft:#2b3942}
+body[data-accent="olive"]{--ob-accent:#788064;--ob-accent-strong:#515b3f;--ob-accent-soft:#eff0e9;--ob-accent-rgb:120,128,100}
+body.dark[data-accent="olive"]{--ob-accent:#aeb894;--ob-accent-strong:#788064;--ob-accent-soft:#343a2d}
+button,input,select,textarea{font:inherit}
+button{transition:transform var(--ob-time) var(--ob-ease),box-shadow var(--ob-time) ease,background-color var(--ob-time) ease,border-color var(--ob-time) ease,color var(--ob-time) ease; -webkit-tap-highlight-color:transparent}
+button:not([disabled]):active{transform:scale(.975,.95)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(var(--ob-accent-rgb),.42)!important;outline-offset:3px!important}
+a{color:var(--ob-accent-strong)}
+#homeScreen,#subjectScreen,#modeScreen,#mgPickerScreen{min-height:calc(100vh - 116px)!important}
+#homeScreen>div,#subjectScreen>div,#modeScreen>div,#mgPickerScreen>div{width:100%;max-width:1040px!important}
+#homeScreen .bg-white,#subjectScreen .bg-white,#modeScreen .bg-white,#mgPickerScreen .bg-white,#quizScreen .bg-white,#resultScreen .bg-white,#mgHDTRoot .bg-white{background:var(--ob-surface)!important;color:var(--ob-text)!important;border:1px solid var(--ob-line)!important;border-radius:28px!important;box-shadow:var(--ob-shadow)!important;overflow:hidden}
+#homeScreen .bg-gradient-to-r,#subjectScreen .bg-gradient-to-r,#modeScreen .bg-gradient-to-r,#mgPickerScreen .bg-gradient-to-r{background:linear-gradient(135deg,#34383d 0%,#222529 100%)!important;padding:clamp(34px,5vw,54px) 28px!important;color:#f5f5f7!important}
+body.dark #homeScreen .bg-gradient-to-r,body.dark #subjectScreen .bg-gradient-to-r,body.dark #modeScreen .bg-gradient-to-r,body.dark #mgPickerScreen .bg-gradient-to-r{background:linear-gradient(135deg,#303337 0%,#202225 100%)!important}
+#homeScreen h1,#subjectScreen h1,#modeScreen h1,#mgPickerScreen h1{font-size:clamp(2rem,5vw,3.2rem)!important;letter-spacing:-.055em!important;line-height:1.05!important;font-weight:700!important}
+#homeScreen .bg-gradient-to-r p,#subjectScreen .bg-gradient-to-r p,#modeScreen .bg-gradient-to-r p,#mgPickerScreen .bg-gradient-to-r p{color:#c7c9cc!important;font-size:1rem!important}
+#homeScreen .p-8,#subjectScreen .p-8,#modeScreen .p-8,#mgPickerScreen .p-8{padding:clamp(18px,4vw,42px)!important}
+#homeScreen button[id^="homeBtn"]{min-height:218px;border-radius:22px!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 16px 36px rgba(20,24,28,.13)!important;background:linear-gradient(145deg,#555b62,#34393f)!important;color:#fff!important}
+#homeScreen button#homeBtnLop8{background:linear-gradient(145deg,#696861,#45443f)!important}
+#homeScreen button#homeBtnMinigame{background:linear-gradient(145deg,#656b61,#41463e)!important}
+#homeScreen button[id^="homeBtn"]:hover{transform:translateY(-6px) scale(1.008)!important;box-shadow:var(--ob-shadow-hover)!important}
+#homeScreen button[id^="homeBtn"] h3{letter-spacing:-.04em!important}
+#subjectGrid{gap:16px!important}
+#subjectGrid button{min-height:190px;border-radius:20px!important;border:1px solid rgba(255,255,255,.12)!important;background:linear-gradient(145deg,#555d65,#343b43)!important;box-shadow:0 12px 28px rgba(25,30,36,.11)!important}
+#subjectGrid button:nth-child(3n+2){background:linear-gradient(145deg,#66645d,#44433e)!important}
+#subjectGrid button:nth-child(3n){background:linear-gradient(145deg,#5d665d,#3b443c)!important}
+#subjectGrid button:hover{transform:translateY(-5px) scale(1.008)!important;box-shadow:var(--ob-shadow-hover)!important}
+#subjectGrid button h3{letter-spacing:-.035em}
+#modeScreen button{border-radius:20px!important;box-shadow:0 14px 32px rgba(24,28,34,.12)!important}
+#modeScreen #startFull{background:linear-gradient(145deg,#565e67,#353c45)!important}
+#modeScreen #startRandom{background:linear-gradient(145deg,#646b5d,#41483a)!important}
+#modeScreen button:hover{transform:translateY(-4px)!important;box-shadow:var(--ob-shadow-hover)!important}
+#mgPickerScreen button:not(#mgPickerHomeBtn){background:linear-gradient(145deg,#5b6269,#3b4148)!important;border-radius:20px!important;box-shadow:0 14px 32px rgba(24,28,34,.12)!important}
+#mgPickerScreen button:not(#mgPickerHomeBtn):hover{transform:translateY(-4px)!important;box-shadow:var(--ob-shadow-hover)!important}
+#quizScreen{padding-top:26px!important}
+#quizScreen>.max-w-7xl{gap:18px!important}
+#quizScreen .bg-white,#resultScreen .bg-white{border-radius:22px!important;box-shadow:0 14px 42px rgba(20,25,30,.065)!important}
+#quizScreen .shadow-xl,#quizScreen .shadow-2xl{box-shadow:0 14px 42px rgba(20,25,30,.065)!important}
+#quizScreen .p-8{padding:clamp(16px,3vw,30px)!important}
+#quizScreen h1,#quizScreen h2,#quizScreen h3{letter-spacing:-.035em}
+#quizScreen button,#resultScreen button{border-radius:12px!important}
+#quizScreen .border,#resultScreen .border{border-color:var(--ob-line)!important}
+#quizScreen input[type="radio"],#quizScreen input[type="checkbox"]{accent-color:var(--ob-accent)!important}
+#quizScreen #scoreInfo,#resultScreen #resultScoreLarge{color:var(--ob-accent-strong)!important}
+#quizScreen #btnNext,#quizScreen #btnSingleNext{background:linear-gradient(145deg,#66705e,#48513f)!important;color:#fff!important}
+#quizScreen #btnSubmit:not([disabled]),#quizScreen #applyCustomCount{background:linear-gradient(145deg,#555e68,#363e47)!important;color:#fff!important}
+#resultScreen #resultRestart{background:linear-gradient(145deg,#555e68,#363e47)!important;color:#fff!important}
+#resultScreen #resultHome{background:linear-gradient(145deg,#66645d,#44433e)!important;color:#fff!important}
+body.dark #quizScreen .bg-white,body.dark #resultScreen .bg-white,body.dark #mgHDTRoot .bg-white{background:var(--ob-surface)!important;color:var(--ob-text)!important}
+body.dark #quizScreen .text-gray-800,body.dark #quizScreen .text-gray-700,body.dark #quizScreen .text-gray-600,body.dark #resultScreen .text-gray-800,body.dark #resultScreen .text-gray-600{color:var(--ob-text)!important}
+body.dark #quizScreen .bg-gray-50,body.dark #quizScreen .bg-gray-100{background:var(--ob-surface-2)!important}
+body.dark #quizScreen input,body.dark #quizScreen textarea,body.dark #quizScreen select{background:#2d3033!important;color:var(--ob-text)!important;border-color:var(--ob-line)!important}
+body>div[style*="position:fixed"]{top:12px!important;left:14px!important;gap:7px!important}
+body>div[style*="position:fixed"]>div,body>div[style*="position:fixed"]>button{background:rgba(35,38,42,.92)!important;color:#f5f5f7!important;backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.13)!important;box-shadow:0 8px 26px rgba(20,24,28,.15)!important}
+#darkModeToggle{border:1px solid rgba(255,255,255,.14)!important}
+#settingsToggleBtn,#lop7HomeBtn,#mgPickerHomeBtn{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.25)!important;color:#fff!important;backdrop-filter:blur(14px)}
+#settingsPanel{background:var(--ob-surface-2)!important;border-color:var(--ob-line)!important;color:var(--ob-text)!important}
+.ob-settings-panel{padding:clamp(18px,3vw,30px)!important}
+.ob-settings-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;max-width:1080px;margin:0 auto 20px}
+.ob-settings-heading h2{font-size:clamp(1.55rem,3vw,2rem);font-weight:700;letter-spacing:-.045em;margin:2px 0 4px;color:var(--ob-text)}
+.ob-settings-heading p:not(.ob-eyebrow){margin:0;color:var(--ob-muted);font-size:.92rem}
+.ob-eyebrow{font-size:.66rem;font-weight:750;letter-spacing:.16em;color:var(--ob-muted);margin:0}
+.ob-settings-close,.ob-reset-button{border:1px solid var(--ob-line);background:var(--ob-surface);color:var(--ob-text);border-radius:999px;padding:9px 14px;font-size:.82rem;font-weight:650}
+.ob-settings-close:hover,.ob-reset-button:hover{background:var(--ob-accent-soft);transform:translateY(-1px)}
+.ob-settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:1080px;margin:0 auto}
+.ob-setting-card{min-width:0;background:var(--ob-surface)!important;border:1px solid var(--ob-line);border-radius:18px;padding:18px;box-shadow:0 5px 18px rgba(20,24,28,.035)}
+.ob-setting-title{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.ob-setting-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:var(--ob-accent-soft);color:var(--ob-accent-strong);font-size:1.15rem;font-weight:700}
+.ob-setting-title h3{font-size:1rem;font-weight:700;letter-spacing:-.02em;margin:0;color:var(--ob-text)}
+.ob-setting-title p{font-size:.76rem;color:var(--ob-muted);margin:2px 0 0}
+.ob-field{display:flex;flex-direction:column;gap:7px;margin-top:13px;color:var(--ob-text);font-size:.82rem;font-weight:600}
+.ob-field select{width:100%;min-height:40px;border:1px solid var(--ob-line);border-radius:11px;background:var(--ob-surface-2);color:var(--ob-text);padding:8px 11px;font-size:.84rem;outline-offset:2px}
+.ob-switch-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--ob-line);cursor:pointer}
+.ob-switch-row:last-of-type{border-bottom:0}
+.ob-switch-row strong{display:block;color:var(--ob-text);font-size:.83rem;font-weight:650}
+.ob-switch-row small{display:block;color:var(--ob-muted);font-size:.72rem;line-height:1.4;margin-top:2px}
+.ob-switch-row input{appearance:none;position:relative;flex:0 0 42px;width:42px;height:25px;border-radius:999px;background:#b8bbc0;border:0;cursor:pointer;transition:background var(--ob-time) ease}
+.ob-switch-row input::after{content:"";position:absolute;top:3px;left:3px;width:19px;height:19px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.22);transition:transform var(--ob-time) var(--ob-ease)}
+.ob-switch-row input:checked{background:var(--ob-accent-strong)}
+.ob-switch-row input:checked::after{transform:translateX(17px)}
+.ob-radio-stack{display:grid;gap:9px;padding:10px 12px;border-radius:12px;background:var(--ob-surface-2);border:1px solid var(--ob-line)}
+.ob-radio-stack label{display:flex;align-items:flex-start;gap:9px;font-weight:500;font-size:.78rem;color:var(--ob-muted);cursor:pointer}
+.ob-radio-stack input{accent-color:var(--ob-accent-strong);margin-top:2px}
+.ob-setting-note{font-size:.7rem;line-height:1.5;color:var(--ob-muted);margin:12px 0 0}
+.ob-settings-footer{max-width:1080px;margin:16px auto 0;padding-top:14px;border-top:1px solid var(--ob-line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ob-settings-footer p{margin:0;color:var(--ob-muted);font-size:.74rem}
+.ob-settings-panel.ob-settings-open{animation:ob-settings-in 340ms cubic-bezier(.2,.75,.25,1) both}
+@keyframes ob-settings-in{from{opacity:0;transform:translateY(-9px) scale(.992)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes ob-page-in{from{opacity:0;transform:translateY(12px) scale(.995);filter:blur(3px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes ob-press-release{0%{transform:scale(.965,.94)}55%{transform:scale(1.035,.985)}78%{transform:scale(.995,1.008)}100%{transform:scale(1)}}
+@keyframes ob-shimmer{to{background-position:-180% 0}}
+.ob-screen-enter{animation:ob-page-in var(--ob-page-time) cubic-bezier(.2,.72,.22,1) both}
+.ob-bounce{animation:ob-press-release 420ms cubic-bezier(.2,.8,.2,1) both}
+.ob-reveal{opacity:0;transform:translateY(16px) scale(.99);transition:opacity 520ms ease,transform 620ms cubic-bezier(.2,.72,.22,1);transition-delay:var(--ob-delay,0ms)}
+.ob-reveal.is-visible{opacity:1;transform:translateY(0) scale(1)}
+#homeScreen button[id^="homeBtn"]:hover,#subjectGrid button:hover,#modeScreen button:hover{filter:saturate(.92)}
+button.ob-pressed{transform:scale(.965,.94)!important;filter:brightness(.96)}
+.subject-q-count[data-loading="true"]{font-size:0!important;min-width:76px;min-height:23px;position:relative;overflow:hidden;color:transparent!important;background:rgba(255,255,255,.14)!important}
+.subject-q-count[data-loading="true"]::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 15%,rgba(255,255,255,.3) 48%,transparent 80%);background-size:200% 100%;animation:ob-shimmer 1.3s linear infinite}
+body.ob-high-contrast{--ob-line:#85888d;--ob-muted:#4d535a}
+body.dark.ob-high-contrast{--ob-line:#b1b5bb;--ob-muted:#d0d3d7}
+body.ob-high-contrast .ob-setting-card,body.ob-high-contrast #homeScreen .bg-white,body.ob-high-contrast #subjectScreen .bg-white,body.ob-high-contrast #quizScreen .bg-white{border-width:2px!important}
+body.ob-high-contrast button:focus-visible,body.ob-high-contrast input:focus-visible,body.ob-high-contrast select:focus-visible{outline-width:4px!important}
+body.ob-motion-off *,body.ob-motion-off *::before,body.ob-motion-off *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body[data-motion="subtle"]{--ob-time:150ms;--ob-page-time:240ms}
+body[data-motion="subtle"] .ob-bounce{animation-duration:260ms}
+body[data-motion="expressive"]{--ob-time:300ms;--ob-page-time:480ms}
+body[data-motion="expressive"] .ob-bounce{animation-duration:520ms}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+@media(max-width:760px){
+  body{padding:76px 10px 24px!important}
+  #homeScreen,#subjectScreen,#modeScreen,#mgPickerScreen{min-height:calc(100vh - 96px)!important}
+  #homeScreen .bg-white,#subjectScreen .bg-white,#modeScreen .bg-white,#mgPickerScreen .bg-white{border-radius:22px!important}
+  #homeScreen .bg-gradient-to-r,#subjectScreen .bg-gradient-to-r,#modeScreen .bg-gradient-to-r,#mgPickerScreen .bg-gradient-to-r{padding:48px 16px 28px!important}
+  #homeScreen button[id^="homeBtn"]{min-height:170px;padding:22px!important}
+  #homeScreen button[id^="homeBtn"] svg{width:48px;height:48px}
+  #subjectGrid button{min-height:155px;padding:18px!important}
+  #subjectGrid button svg{width:44px;height:44px}
+  .ob-settings-grid{grid-template-columns:1fr}
+  .ob-settings-heading{align-items:center}
+  .ob-settings-footer{align-items:flex-start;flex-direction:column}
+  #quizScreen .max-w-7xl{padding-left:8px!important;padding-right:8px!important}
+}
+@media(max-width:420px){
+  body>div[style*="position:fixed"]{left:8px!important;top:8px!important}
+  body>div[style*="position:fixed"]>div{padding:8px 12px!important}
+  #darkModeToggle{padding:7px 11px!important}
+  .ob-settings-panel{padding:16px!important}
+  .ob-setting-card{padding:15px}
+}
+</style>
+
+<script id="onbai-settings-and-motion">
+(function(){
+  const KEY={theme:'ob.theme',accent:'ob.accent',text:'ob.textSize',animations:'ob.animations',motion:'ob.motionIntensity',reduce:'ob.reduceMotion',contrast:'ob.highContrast',start:'ob.defaultStartScreen',updates:'ob.updateNotifications'};
+  const $=id=>document.getElementById(id);
+  const read=(key,fallback)=>localStorage.getItem(key)===null?fallback:localStorage.getItem(key);
+  const write=(key,value)=>localStorage.setItem(key,String(value));
+  const systemDark=()=>!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+  let revealObserver=null;
+
+  function effectiveReduceMotion(){
+    const osPrefers=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    const saved=localStorage.getItem(KEY.reduce);
+    return osPrefers||saved==='1';
+  }
+  function applyTheme(theme){
+    const dark=theme==='dark'||(theme==='system'&&systemDark());
+    document.body.classList.toggle('dark',dark);
+    const icon=$('darkModeIcon'),label=$('darkModeLabel');
+    if(icon)icon.textContent=dark?'☀':'◐';
+    if(label)label.textContent=theme==='system'?'Theo thiết bị':(dark?'Chế độ tối':'Chế độ sáng');
+    const select=$('themeSelect');if(select)select.value=theme;
+    if(theme==='dark'||theme==='light')localStorage.setItem('darkMode',dark?'1':'0');else localStorage.removeItem('darkMode');
+  }
+  function applyAccent(){
+    const accent=read(KEY.accent,'graphite');
+    document.body.dataset.accent=['graphite','bluegray','olive'].includes(accent)?accent:'graphite';
+    if($('accentSelect'))$('accentSelect').value=document.body.dataset.accent;
+  }
+  function applyTextSize(){
+    const size=read(KEY.text,'normal');
+    const px=size==='compact'?'15px':size==='large'?'17px':'16px';
+    document.documentElement.style.setProperty('--ob-font-scale',px);
+    if($('textSizeSelect'))$('textSizeSelect').value=['compact','normal','large'].includes(size)?size:'normal';
+  }
+  function applyMotion(){
+    const enabled=read(KEY.animations,'1')!=='0';
+    const reduced=effectiveReduceMotion();
+    const off=!enabled||reduced;
+    document.body.classList.toggle('ob-motion-off',off);
+    document.body.dataset.motion=read(KEY.motion,'balanced');
+    if($('animationsToggle'))$('animationsToggle').checked=enabled;
+    if($('motionIntensity'))$('motionIntensity').value=document.body.dataset.motion;
+    if($('reduceMotionToggle')){ $('reduceMotionToggle').checked=reduced; $('reduceMotionToggle').disabled=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches); }
+    if(!off)refreshReveals();else revealAll();
+  }
+  function applyAccessibility(){
+    const high=read(KEY.contrast,'0')==='1';
+    document.body.classList.toggle('ob-high-contrast',high);
+    if($('highContrastToggle'))$('highContrastToggle').checked=high;
+    const updates=read(KEY.updates,'1')!=='0';
+    if($('updateNotificationsToggle'))$('updateNotificationsToggle').checked=updates;
+  }
+  function syncExistingControls(){
+    if($('warningToggle'))$('warningToggle').checked=localStorage.getItem('warningsEnabled')==='true';
+    const nav=read('mobileNavStyle','inline');
+    if($('mobileNavInlineOpt'))$('mobileNavInlineOpt').checked=nav!=='drawer';
+    if($('mobileNavDrawerOpt'))$('mobileNavDrawerOpt').checked=nav==='drawer';
+    if($('defaultStartScreen'))$('defaultStartScreen').value=read(KEY.start,'home');
+  }
+  function applyAll(){
+    const theme=read(KEY.theme,localStorage.getItem('darkMode')==='1'?'dark':'system');
+    applyTheme(theme);applyAccent();applyTextSize();applyMotion();applyAccessibility();syncExistingControls();
+  }
+  function revealAll(root=document){
+    root.querySelectorAll('.ob-reveal').forEach(el=>el.classList.add('is-visible'));
+  }
+  function refreshReveals(root=document){
+    if(document.body.classList.contains('ob-motion-off')){revealAll(root);return;}
+    if(!('IntersectionObserver' in window)){revealAll(root);return;}
+    if(!revealObserver){
+      revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}
+      }),{threshold:.08,rootMargin:'0px 0px -24px 0px'});
+    }
+    root.querySelectorAll('#homeScreen button[id^="homeBtn"],#subjectGrid button,#modeScreen button,#mgPickerScreen button').forEach((el,index)=>{
+      if(!el.classList.contains('ob-reveal')){
+        el.classList.add('ob-reveal');el.style.setProperty('--ob-delay',Math.min(index,5)*55+'ms');
+      }
+      if(!el.classList.contains('is-visible'))revealObserver.observe(el);
+    });
+  }
+  function animateRoute(){
+    if(document.body.classList.contains('ob-motion-off'))return;
+    const candidates=['homeScreen','subjectScreen','modeScreen','quizScreen','resultScreen','mgPickerScreen','mgGameScreen','mgResultScreen','mgModeScreen','mgHDTRoot'].map($).filter(Boolean);
+    const active=candidates.find(el=>!el.classList.contains('hidden')&&el.getClientRects().length);
+    if(!active)return;
+    active.classList.remove('ob-screen-enter');
+    requestAnimationFrame(()=>{active.classList.add('ob-screen-enter');refreshReveals(active);});
+  }
+  function setStatus(message){if($('settingsStatus'))$('settingsStatus').textContent=message;}
+  function openSettings(open){
+    const panel=$('settingsPanel'),trigger=$('settingsToggleBtn');if(!panel)return;
+    const shouldOpen=typeof open==='boolean'?open:panel.style.display==='none';
+    panel.style.display=shouldOpen?'block':'none';panel.setAttribute('aria-hidden',shouldOpen?'false':'true');
+    if(trigger)trigger.setAttribute('aria-expanded',shouldOpen?'true':'false');
+    if(shouldOpen){panel.classList.remove('ob-settings-open');requestAnimationFrame(()=>panel.classList.add('ob-settings-open'));}
+  }
+  function toggleTheme(){
+    const current=read(KEY.theme,'system');
+    const currentlyDark=current==='dark'||(current==='system'&&systemDark());
+    const next=currentlyDark?'light':'dark';write(KEY.theme,next);applyTheme(next);setStatus('Đã lưu chế độ hiển thị.');
+  }
+  function resetSettings(){
+    if(!confirm('Khôi phục cài đặt mặc định? Chỉ tùy chọn giao diện và trải nghiệm sẽ được đặt lại; tiến trình làm bài và dữ liệu môn học không bị xóa.'))return;
+    Object.values(KEY).forEach(k=>localStorage.removeItem(k));
+    localStorage.removeItem('warningsEnabled');localStorage.removeItem('mobileNavStyle');localStorage.removeItem('darkMode');
+    applyAll();updateNavResponsive();setStatus('Đã khôi phục cài đặt mặc định. Tiến trình học vẫn được giữ nguyên.');
+  }
+  function bindControls(){
+    $('settingsCloseBtn')?.addEventListener('click',()=>openSettings(false));
+    $('themeSelect')?.addEventListener('change',e=>{write(KEY.theme,e.target.value);applyTheme(e.target.value);setStatus('Đã lưu chế độ hiển thị.');});
+    $('accentSelect')?.addEventListener('change',e=>{write(KEY.accent,e.target.value);applyAccent();setStatus('Đã lưu tông nhấn.');});
+    $('textSizeSelect')?.addEventListener('change',e=>{write(KEY.text,e.target.value);applyTextSize();setStatus('Đã lưu cỡ chữ.');});
+    $('animationsToggle')?.addEventListener('change',e=>{write(KEY.animations,e.target.checked?'1':'0');applyMotion();setStatus('Đã lưu tùy chọn chuyển động.');});
+    $('motionIntensity')?.addEventListener('change',e=>{write(KEY.motion,e.target.value);applyMotion();setStatus('Đã lưu mức độ chuyển động.');});
+    $('reduceMotionToggle')?.addEventListener('change',e=>{write(KEY.reduce,e.target.checked?'1':'0');applyMotion();setStatus('Đã lưu Reduce Motion.');});
+    $('highContrastToggle')?.addEventListener('change',e=>{write(KEY.contrast,e.target.checked?'1':'0');applyAccessibility();setStatus('Đã lưu tùy chọn tương phản.');});
+    $('updateNotificationsToggle')?.addEventListener('change',e=>{write(KEY.updates,e.target.checked?'1':'0');setStatus(e.target.checked?'Đã bật thông báo phiên bản mới.':'Đã tắt thông báo phiên bản mới.');});
+    $('defaultStartScreen')?.addEventListener('change',e=>{write(KEY.start,e.target.value);setStatus('Màn hình mặc định sẽ được áp dụng từ lần mở OnBai tiếp theo.');});
+    $('warningToggle')?.addEventListener('change',e=>{localStorage.setItem('warningsEnabled',e.target.checked?'true':'false');setStatus('Đã lưu cảnh báo khi rời bài.');});
+    document.querySelectorAll('input[name="mobileNavStyle"]').forEach(el=>el.addEventListener('change',()=>setStatus('Đã lưu kiểu điều hướng câu hỏi.')));
+    $('resetSettingsBtn')?.addEventListener('click',resetSettings);
+  }
+  function init(){
+    if(localStorage.getItem(KEY.theme)===null&&localStorage.getItem('darkMode')!==null)write(KEY.theme,localStorage.getItem('darkMode')==='1'?'dark':'light');
+    applyAll();bindControls();
+    window.obObserveReveals=refreshReveals;window.obAnimateRoute=animateRoute;
+    window.obToggleTheme=toggleTheme;window.obToggleSettings=()=>openSettings();
+    window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{if(read(KEY.theme,'system')==='system')applyTheme('system');});
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').addEventListener?.('change',()=>{if(localStorage.getItem(KEY.reduce)===null)applyMotion();});
+  }
+  window.initOnBaiSettings=init;
+  window.obObserveReveals=refreshReveals;
+  window.obAnimateRoute=animateRoute;
+  window.obToggleTheme=toggleTheme;
+  window.obToggleSettings=()=>openSettings();
+  // Press → release spring. Keyboard activation still receives the CSS :active state.
+  let pressed=null;
+  document.addEventListener('pointerdown',e=>{const el=e.target.closest('button');if(!el||document.body.classList.contains('ob-motion-off'))return;pressed=el;el.classList.add('ob-pressed');},{passive:true});
+  function release(){if(!pressed)return;const el=pressed;pressed=null;el.classList.remove('ob-pressed');if(!document.body.classList.contains('ob-motion-off')){el.classList.remove('ob-bounce');void el.offsetWidth;el.classList.add('ob-bounce');}}
+  document.addEventListener('pointerup',release,{passive:true});document.addEventListener('pointercancel',release,{passive:true});
+  document.addEventListener('animationend',e=>{if(e.target.classList?.contains('ob-bounce'))e.target.classList.remove('ob-bounce');});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('settingsPanel')?.style.display!=='none')openSettings(false);});
+})();
+</script>
 
 </body>
 </html>
